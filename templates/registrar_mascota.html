@@ -19,22 +19,22 @@
     <nav>
       <div class="nav__header">
         <div class="nav__logo">
-          <a href="#">Centro de Amigos Peludos</a>
+          <a href="home.html">Centro de Amigos Peludos</a>
         </div>
         <div class="nav__menu__btn" id="menu-btn">
           <i class="ri-menu-line"></i>
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="/templates/home.html">Inicio</a></li>
+        <li><a href="home.html">Inicio</a></li>
         <li>
-          <a href="/templates/registrar_mascota.html">Registrar Mascota</a>
+          <a href="registrar_mascota.html">Registrar Mascota</a>
         </li>
-        <li><a href="/templates/registrar_cita.html">Registrar Cita</a></li>
+        <li><a href="registrar_cita.html">Registrar Cita</a></li>
         <li>
-          <a href="/templates/consultar_usuarios.html">Consultar Usuarios</a>
+          <a href="consultar_usuarios.html">Consultar Usuarios</a>
         </li>
-        <li><a href="/templates/consultar_citas.html">Consultar Citas</a></li>
+        <li><a href="consultar_citas.html">Consultar Citas</a></li>
       </ul>
     </nav>
 
@@ -43,7 +43,8 @@
         <div class="header__content">
           <h2>Registro de Mascota</h2>
           <p>Ingresa Cedula para registrar tu mascota</p>
-          <form class="form" id="form-mascota">
+          <!-- Formulario de mascota-->
+          <form class="form" id="formularioRegistroMascota">
             <label for="cedula">Cedula</label>
             <input
               type="text"
@@ -54,19 +55,38 @@
               title="La cédula debe tener entre 7 y 10 dígitos"
             /><br />
 
-            <label for="nombre">Nombre:</label>
+            <label for="nombreMascota">Nombre:</label>
             <input
               type="text"
-              id="nombre"
-              name="nombre"
+              id="nombreMascota"
+              name="nombreMascota"
               required
               placeholder="Mascota"
             /><br />
-            <br />
-            <input type="radio" id="perro" name="raza" value="perro" required />
+
+            <h3>Raza de la Mascota</h3>
+            <select id="raza">
+              <option>Perro</option>
+              <option>Gato</option>
+            </select>
+            <!--
+            <input
+              type="radio"
+              id="perro"
+              name="razaPerro"
+              value="perro"
+              required
+            />
             <label for="perro">Perro</label>
-            <input type="radio" id="gato" name="raza" value="gato" required />
+            <input
+              type="radio"
+              id="gato"
+              name="razaGato"
+              value="gato"
+              required
+            />
             <label for="gato">Gato</label>
+             -->
             <br />
             <div class="header__btn">
               <button type="submit">
@@ -95,12 +115,12 @@
       <div class="section__container footer__container">
         <div class="footer__col">
           <div class="footer__logo">
-            <a href="#">Centro de Amigos Peludos</a>
+            <a href="../templates/home.html">Centro de Amigos Peludos</a>
           </div>
         </div>
         <div class="footer__col">
           <ul class="footer__links">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="home.html">Inicio</a></li>
             <li><a href="#">Sobre nosotros</a></li>
             <li><a href="#">Servicios</a></li>
             <li><a href="#">Tienda</a></li>
@@ -136,6 +156,6 @@
         reservados.
       </div>
     </footer>
+    <script src="/static/js/registrar_mascota.js"></script>
   </body>
-  <script src="/static/js/scripts.js"></script>
 </html>
