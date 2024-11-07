@@ -1,22 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
     <title>Registrar Cita Médica</title>
   </head>
   <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="home.html">Centro de Amigos Peludos</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="home.html">Inicio</a></li>
+        <li>
+          <a href="/templates/registrar_mascota.html">Registrar Mascota</a>
+        </li>
+        <li><a href="/templates/registrar_cita.html">Registrar Cita</a></li>
+        <li>
+          <a href="/templates/consultar_usuarios.html">Consultar Usuarios</a>
+        </li>
+        <li><a href="/templates/consultar_citas.html">Consultar Citas</a></li>
+      </ul>
+    </nav>
     <h2>Registro de Cita Médica</h2>
     <form id="form-cita">
       <label for="nombre-mascota-cita">Nombre de la Mascota:</label>
       <input type="text" id="nombre-mascota-cita" required /><br />
-  
+
       <label for="fecha-cita">Fecha de la Cita:</label>
       <input type="date" id="fecha-cita" required /><br />
-  
+
       <label for="motivo">Motivo:</label>
       <input type="text" id="motivo" required /><br />
-  
+
       <button type="submit">Registrar Cita</button>
     </form>
   </body>
