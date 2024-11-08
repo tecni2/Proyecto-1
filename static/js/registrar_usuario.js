@@ -1,7 +1,19 @@
-function registrar_user(event) {
+// Función para obtener la lista de usuarios desde localStorage
+function obtenerUsuarios() {
+  let usuarios = localStorage.getItem("usuarios");
+  return usuarios ? JSON.parse(usuarios) : []; // Si no hay datos, devuelve un array vacío
+}
+
+// Función para guardar la lista de usuarios en localStorage
+function guardarUsuarios(usuarios) {
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+// Función para registrar un nuevo usuario
+function registrarUsuario(event) {
   event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-  // Recoge los valores de cada campo
+  // Obtener los datos del formulario
   let nombre = document.getElementById("nombre").value;
   let apellido = document.getElementById("apellido").value;
   let cedula = document.getElementById("cedula").value;
@@ -10,7 +22,7 @@ function registrar_user(event) {
   let celular = document.getElementById("celular").value;
   let acepta = document.getElementById("acepta").checked;
 
-  // Verificar que no haya campos vacíos
+  // Verificar que no haya campos vacíos y que se acepte los términos
   if (
     nombre === "" ||
     apellido === "" ||
@@ -44,19 +56,37 @@ function registrar_user(event) {
     return;
   }
 
-  // Mostrar los datos en la consola si todas las validaciones pasan
-  console.log(`
-      Nombre: ${nombre}
-      Apellido: ${apellido}
-      Cédula: ${cedula}
-      Email: ${email}
-      Contraseña: ${password}
-      Celular: ${celular}
-      Acepta términos: ${acepta}
+  // Crear un objeto usuario con los datos del formulario
+  const usuario = {
+    nombre: nombre,
+    apellido: apellido,
+    cedula: cedula,
+    email: email,
+    password: password,
+    celular: celular,
+    acepta: acepta,
+  };
+
+  // Guardar el usuario en localStorage
+  let usuarios = obtenerUsuarios();
+  usuarios.push(usuario);
+  guardarUsuarios(usuarios);
+
+  // Confirmación de registro
+  alert("Usuario registrado exitosamente");
+  console.log(` 
+        Validaciones ok,
+        Nombre: ${nombre}
+        Apellido: ${apellido}
+        Cédula: ${cedula}
+        Email: ${email}
+        Contraseña: ${password}
+        Celular: ${celular}
+        Acepta términos: ${acepta}
     `);
 
-  // Mensaje de éxito si todas las validaciones pasan
-  alert("Usuario registrado exitosamente");
+  // Limpiar el formulario después de registrar
+  document.getElementById("formularioRegistro").reset();
 }
 
 // Función para validar que el texto solo tenga letras
@@ -106,7 +136,7 @@ function esContrasenaValida(contrasena) {
   return tieneNumero && tieneLetra;
 }
 
-// Agrega el evento al formulario para que llame a la función de registro
+// Asignar el evento submit al formulario para registrar usuario
 document
   .getElementById("formularioRegistro")
-  .addEventListener("submit", registrar_user);
+  .addEventListener("submit", registrarUsuario);

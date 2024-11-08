@@ -214,12 +214,13 @@ img.header__image-bg {
   z-index: -1;
 }
 
+/*
 .form {
-  /*  border: 1px solid red;
+   border: 1px solid red;
     height: 300px;
-    width: 400px;*/
+    width: 400px;
 }
-
+*/
 .about__content span img {
   max-width: 40px;
 }
@@ -239,7 +240,6 @@ img.header__image-bg {
   margin-inline: auto;
   color: var(--text-light);
 }
-
 
 .swiper {
   margin-top: 4rem;
@@ -355,6 +355,11 @@ img.header__image-bg {
 }
 
 @media (width > 768px) {
+  /*header {
+    height: 580px;
+    padding-top: 0;
+  }
+*/
   nav {
     position: static;
     padding: 2rem 1rem;
@@ -388,18 +393,13 @@ img.header__image-bg {
     transform: none;
   }
 
-  header {
-    height: 580px;
-    padding-top: 0;
-  }
-
   .header__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
   .header__content {
-   /* border: 2px solid rgb(142, 165, 42);*/
+    /* border: 2px solid rgb(142, 165, 42);*/
     grid-area: 1/2/2/3;
   }
 
@@ -423,4 +423,53 @@ img.header__image-bg {
   .footer__container {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* Estilo general para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Estilos para las celdas de encabezado */
+table thead th {
+  background-color: #4a4a8c; /* Color de fondo del encabezado */
+  color: white; /* Texto en blanco */
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Estilos para las celdas de datos */
+table tbody td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alterna el color de las filas para mayor legibilidad */
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+/* Hover sobre las filas */
+table tbody tr:hover {
+  background-color: #e6e6ff; /* Color de fondo al pasar el cursor */
+}
+
+/* Estilo para las celdas de la primera columna */
+table tbody td:first-child {
+  font-weight: bold; /* Destaca el número de registro */
+}
+
+/* Encabezado */
+.h2_consulta {
+  font-family: Arial, sans-serif;
+  color: #4a4a8c;
+  font-size: 24px;
+  margin-bottom: 15px;
 }

@@ -3,10 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
     <title>Consultar Citas Médicas</title>
   </head>
   <body>
-    <h2>Citas Médicas Registradas</h2>
-    <ul id="lista-citas"></ul>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="home.html">Centro de Amigos Peludos</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="home.html">Inicio</a></li>
+        <li>
+          <a href="registrar_mascota.html">Registrar Mascota</a>
+        </li>
+        <li><a href="registrar_cita.html">Registrar Cita</a></li>
+        <li>
+          <a href="consultar_usuarios.html">Consultar Usuarios</a>
+        </li>
+        <li><a href="consultar_citas.html">Consultar Citas</a></li>
+      </ul>
+    </nav>
+
+    <h2 class="h2_consulta">Consultar Citas Médicas</h2>
+
+    <section>
+      <!-- Tabla de citas -->
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Cédula</th>
+            <th>Mascota</th>
+            <th>Fecha</th>
+            <th>Motivo</th>
+          </tr>
+        </thead>
+        <tbody id="tablaCitas"></tbody>
+      </table>
+    </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/consultar_citas.js"></script>
   </body>
 </html>

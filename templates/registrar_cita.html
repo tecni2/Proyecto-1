@@ -36,20 +36,39 @@
         <li><a href="consultar_citas.html">Consultar Citas</a></li>
       </ul>
     </nav>
+
     <header id="home">
       <div class="section__container header__container">
         <div class="header__content">
           <h2>Registro de Cita Médica</h2>
-          <br /><br /><br />
+          <p>Ingresa Cedula</p>
+          <!-- Formulario de mascota-->
           <form id="formularioRegistrarCita">
-            <label for="nombre-mascota-cita">Nombre de la Mascota:</label>
-            <input type="text" id="nombre-mascota-cita" /><br />
+            <label for="cedula">Cédula</label>
+            <input
+              type="text"
+              id="cedula"
+              name="cedula"
+              required
+              pattern="\d{7,10}"
+              title="La cédula debe tener entre 7 y 10 dígitos"
+            /><br />
+
+            <!-- Botón para consultar la cédula ingresada -->
+            <button type="button" onclick="consultarCedula()">Consultar</button
+            ><br />
+
+            <label for="mascota-cita">Seleccionar Mascota:</label>
+            <select id="mascota-cita" required>
+              <option value="">Seleccione una mascota</option></select
+            ><br />
 
             <label for="fecha-cita">Fecha de la Cita:</label>
-            <input type="date" id="fecha-cita" /><br />
+            <input type="date" id="fecha-cita" required /><br />
 
             <label for="motivo">Motivo:</label>
-            <input type="text" id="motivo" /><br />
+            <input type="text" id="motivo" required /><br />
+
             <br /><br />
             <div class="header__btn">
               <button type="submit">
@@ -120,6 +139,9 @@
         reservados.
       </div>
     </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../static/js/menu.js"></script>
     <script src="../static/js/registrar_cita.js"></script>
   </body>
 </html>
