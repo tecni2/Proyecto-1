@@ -425,7 +425,7 @@ img.header__image-bg {
   }
 }
 
-/* Estilo general para la tabla */
+/* Estilo general para la tabla de consultas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -472,4 +472,46 @@ table tbody td:first-child {
   color: #4a4a8c;
   font-size: 24px;
   margin-bottom: 15px;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block; /* Cambia la tabla a un diseño de bloques */
+  }
+
+  /* Oculta el encabezado en dispositivos móviles */
+  thead tr {
+    display: none;
+  }
+
+  /* Ajusta cada celda para que parezca una tarjeta */
+  tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Estilo para cada celda (etiqueta y valor) */
+  tbody td:before {
+    content: attr(
+      data-label
+    ); /* Usa el atributo personalizado para mostrar la etiqueta */
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #4a4a8c;
+  }
 }

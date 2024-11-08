@@ -30,14 +30,13 @@ function mostrarUsuariosConMascotas() {
 
     // Agregar la fila del usuario a la tabla
     usuariosHTML += `<tr>
-                            <td>${index + 1}</td>
-                            <td>${usuario.nombre}</td>
-                            <td>${usuario.apellido}</td>
-                            <td>${usuario.cedula}</td>
-                            <td>${usuario.email}</td>
-                            <td>${usuario.celular}</td>
-                            <td>${usuario.acepta ? "Sí" : "No"}</td>
-                            <td>${mascotasTexto}</td>
+                            <td data-label="#">${index + 1}</td>
+                        <td data-label="Nombre">${usuario.nombre}</td>
+                        <td data-label="Apellido">${usuario.apellido}</td>
+                        <td data-label="Cédula">${usuario.cedula}</td>
+                        <td data-label="Email">${usuario.email}</td>
+                        <td data-label="Celular">${usuario.celular}</td>
+                        <td data-label="Mascotas">${mascotasTexto}</td>
                          </tr>`;
   });
 

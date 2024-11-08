@@ -16,11 +16,11 @@ function obtenerCitas() {
   
       // Asegúrate de usar las claves correctas que coinciden con los datos almacenados
       fila.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${cita.cedulaUsuario || "Cédula no encontrada"}</td>
-        <td>${cita.mascota || "Mascota no encontrada"}</td>
-        <td>${cita.fecha || "Fecha no encontrada"}</td>
-        <td>${cita.motivo || "Motivo no encontrado"}</td>
+        <td data-label="#">${index + 1}</td>
+      <td data-label="Cédula">${cita.cedulaUsuario || "Cédula no encontrada"}</td>
+      <td data-label="Mascota">${cita.mascota || "Mascota no encontrada"}</td>
+      <td data-label="Fecha">${cita.fecha || "Fecha no encontrada"}</td>
+      <td data-label="Motivo">${cita.motivo || "Motivo no encontrado"}</td>
       `;
   
       tablaCitas.appendChild(fila);
